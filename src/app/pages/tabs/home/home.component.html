@@ -1,13 +1,5 @@
-<ActionBar>
-  <Label text="Home"></Label>
-</ActionBar>
-
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['../item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+<ScrollView>
+  <StackLayout class="home-container">
+    <app-post *ngFor="let post of posts" [profileImage]="post.profileImage" [username]="post.username" [content]="post.content" [replies]="post.replies"></app-post>
+  </StackLayout>
+</ScrollView>
