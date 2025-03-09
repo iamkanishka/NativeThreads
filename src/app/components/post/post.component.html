@@ -1,1 +1,17 @@
-<p>post works!</p>
+<StackLayout class="post-container">
+    <GridLayout columns="auto, *" rows="auto">
+      <Image [src]="profileImage" class="profile-pic" row="0" col="0"></Image>
+      <StackLayout row="0" col="1">
+        <Label [text]="username" class="username"></Label>
+        <Label [text]="content" class="content"></Label>
+        <GridLayout columns="auto, auto, auto" class="actions">
+          <Label text="❤️" col="0" (tap)="likePost()"></Label>
+          <Label text="🔁" col="1" (tap)="replyPost()"></Label>
+          <Label text="✈️" col="2" (tap)="sharePost()"></Label>
+        </GridLayout>
+        <StackLayout *ngIf="replies?.length" class="thread-container">
+          <app-thread *ngFor="let reply of replies" [thread]="reply"></app-thread>
+        </StackLayout>
+      </StackLayout>
+    </GridLayout>
+  </StackLayout>
