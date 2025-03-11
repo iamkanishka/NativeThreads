@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NativeScriptCommonModule } from "@nativescript/angular";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { ActivityRoutingModule } from './activity-routing.module';
-
+import { ActivityRoutingModule } from "./activity-routing.module";
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    ActivityRoutingModule
-  ]
+  imports: [NativeScriptCommonModule, ActivityRoutingModule],
+  schemas: [NO_ERRORS_SCHEMA]
 })
-export class ActivityModule { }
+export class ActivityModule {}
