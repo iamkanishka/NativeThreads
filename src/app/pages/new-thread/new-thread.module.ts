@@ -1,12 +1,12 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { NewThreadRoutingModule } from './new-thread-routing.module';
 import { NativeScriptCommonModule } from '@nativescript/angular'
+import { NewThreadComponent } from './new-thread.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [NewThreadComponent],
   imports: [
     NativeScriptCommonModule,
     NewThreadRoutingModule
